@@ -1,5 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
+  <input type="text" ref="name" />
+  <button @click="handleClick">Click me</button>
 </template>
 
 <script>
@@ -9,6 +11,15 @@ export default {
   data() {
     return {
       title: "My first vue app!"
+    }
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name)
+      // add class to the ref.name active, e.g class="active"
+      this.$refs.name.classList.add("active")
+      // focus to the refs
+      this.$refs.name.focus()
     }
   }
 }
