@@ -1,8 +1,10 @@
 <template>
   <h1>{{ title }}</h1>
-  <input type="text" ref="name" />
-  <button @click="handleClick">Click me</button>
-  <Modal header="Modal title" content="Modal content" />
+  <p>Welcome...</p>
+  <div v-if="modalShow">
+    <Modal @toggleModal="modalShow = false" header="Modal title" content="Modal content" />
+  </div>
+  <button @click="modalShow = true">Click me</button>
 </template>
 
 <script>
@@ -15,7 +17,8 @@ export default {
   },
   data() {
     return {
-      title: "My first vue app!"
+      title: "My first vue app!",
+      modalShow: false,
     }
   },
   methods: {
