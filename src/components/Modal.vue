@@ -1,11 +1,27 @@
 <template>
     <div class="backdrop">
         <div class="modal">
-        <h1>Modal title</h1>
-            <p>Modal content</p>
+        <h1>{{header}}</h1>
+            <p>{{content}}</p>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: "Modal",
+    props: {
+        header: {
+            type: String,
+            required: true,
+        },
+        content: {
+            type: String,
+            required: true
+        }
+    }
+}
+</script>
 
 <style scoped>
     .modal {
