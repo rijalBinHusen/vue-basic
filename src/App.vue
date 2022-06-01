@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
   <p>Welcome...</p>
-  <div v-if="modalShow">
+  <teleport to=".modals" v-if="modalShow">
     <Modal @toggleModal="modalShow = false" header="Modal title" content="Modal content">
       <h1> Hello world from app.vue</h1>
       <template v-slot:action>
@@ -10,7 +10,7 @@
         <a href="#">Link 3</a>
       </template>  
     </Modal>
-  </div>
+  </teleport>
   <button @click="modalShow = true">Click me</button>
 </template>
 
